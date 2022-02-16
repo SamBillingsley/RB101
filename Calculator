@@ -1,0 +1,35 @@
+puts "=> Welcome to the Calculator."
+
+loop do
+  puts "=> What is the first number?"
+  num1 = gets.chomp
+
+  puts "=> What is the second number?"
+  num2 = gets.chomp
+
+  puts "=> What operation would you like to perform? 1) add 2) subtract 3) multiply 4) divide"
+  op = gets.chomp
+
+  if op == "1"
+    puts "#{num1} + #{num2} = #{num1.to_i + num2.to_i}"
+    break
+  elsif op == "2"
+    puts "#{num1} - #{num2} = #{num1.to_i - num2.to_i}"
+    break
+  elsif op == "3"
+    puts "#{num1} * #{num2} = #{num1.to_i * num2.to_i}"
+    break
+  elsif op == "4"
+    puts "#{num1} / #{num2} = #{num1.to_i / num2.to_i}"
+    break
+  else
+    puts "=> Error, unknown operation. Try again."
+  end
+end
+
+# 1) informal
+# define number with two variables
+# add variable one with variable two
+# end
+# call number
+
