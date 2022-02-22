@@ -43,9 +43,14 @@
 #   break if counter == 5
 # end
 
-def value(n)
-  puts n
-  n
-end
+# def value(n)
+#   puts n
+#   n
+# end
 
-puts value(3) + value(5) * value(7)
+# puts value(3) + value(5) * value(7)
+
+require 'yaml'
+MESSAGES = YAML.load_file( '/Users/sambillingsley/Documents/School Work/RB101/calculator_messages.yml' )
+
+putsMESSAGES.inspect
