@@ -53,4 +53,6 @@
 require 'yaml'
 MESSAGES = YAML.load_file( '/Users/sambillingsley/Documents/School Work/RB101/calculator_messages.yml' )
 
-putsMESSAGES.inspect
+puts MESSAGES.inspect
+
+puts "Hello"
