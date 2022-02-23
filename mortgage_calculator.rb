@@ -17,15 +17,12 @@ def integer?(num)
   num.to_i.to_s == num
 end
 
-loan_amount = ''
-apr = ''
-loan_duration = ''  #in months
-monthly_payment = ''
-
 prompt(messages('greeting'))
+prompt('------------------------------------------')
 
 loop do
 
+  loan_amount = ''
   prompt(messages('loan_amount'))
     loop do
       loan_amount = gets.chomp
@@ -36,6 +33,8 @@ loop do
       end
     end
     
+
+  apr = ''
   prompt(messages('apr'))
     loop do 
       apr = gets.chomp 
@@ -46,6 +45,7 @@ loop do
       end
     end
 
+  loan_duration = ''  #in months
   prompt(messages('loan_duration'))
     loop do
       loan_duration = gets.chomp
@@ -56,6 +56,7 @@ loop do
       end
     end
 
+    monthly_payment = ''
     monthly_payment = loan_amount.to_f * ((apr.to_f / 100 / 12) / (1 - (1 + (apr.to_f / 100 / 12))**(-loan_duration.to_f)))
     prompt("#{messages('monthly_payment')} #{monthly_payment}.") 
 

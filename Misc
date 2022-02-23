@@ -55,4 +55,3 @@ MESSAGES = YAML.load_file( '/Users/sambillingsley/Documents/School Work/RB101/ca
 
 puts MESSAGES.inspect
 
-puts "Hello"

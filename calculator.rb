@@ -1,5 +1,5 @@
 require 'yaml'
-MESSAGES = YAML.load_file( '/Users/sambillingsley/Documents/School Work/RB101/calculator_messages.yml' )
+MESSAGES = YAML.load_file('/Users/sambillingsley/Documents/School Work/RB101/calculator_messages.yml')
 
 LANGUAGE = 'es'
 
@@ -118,6 +118,7 @@ loop do
            when "4"
              num1.to_f / num2.to_f
            end
+
   prompt("#{messages('result', LANGUAGE)} #{result}.") 
 
   prompt(messages('retry?', LANGUAGE)) 
