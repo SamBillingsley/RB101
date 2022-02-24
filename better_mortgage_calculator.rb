@@ -1,5 +1,5 @@
 require 'yaml'
-MESSAGES = YAML.load_file('mortgage_messages.yml')
+MESSAGES = YAML.load_file(File.join(File.dirname(__FILE__), 'mortgage_messages.yml'))
 
 def messages(message)
   MESSAGES[message]
@@ -47,7 +47,7 @@ loop do
   end
 
   tax = 0.0825
-  price + (price * tax)
+  final_price = price + (price * tax)
 
   down_payment = ''
   prompt(messages('down_payment'))
@@ -60,7 +60,7 @@ loop do
     end
   end
 
-  loan_amount = price.to_f - down_payment.to_f
+  loan_amount = final_price.to_f - down_payment.to_f
   apr = ''
   prompt(messages('apr'))
   loop do
@@ -95,12 +95,12 @@ loop do
   loop do
     answer = gets.chomp
     break unless answer.downcase.start_with?('y')
-    deferred = (price.to_f - down_payment.to_f) / loan_duration.to_f
+    deferred = (final_price.to_f - down_payment.to_f) / loan_duration.to_f
     break
   end
 
   if deferred
-    prompt("#{messages('monthly_payment')} $#{deferred.round(2)}.") 
+    prompt("#{messages('monthly_payment')} $#{deferred.round(2)}.")
     prompt("You will be paying an extra $#{interest} after those #{loan_duration} months.")
   else
     prompt("#{messages('monthly_payment')} $#{monthly_payment.round(2)}.")

@@ -8,7 +8,7 @@ try_again?: "Would you like to calculate another loan?"
 thanks: "Thank you for using the interest calculator"
 price: "How much is your purchase?"
 down_payment: "How much are you putting down?"
-interest_calc: "You will be paying "
+interest_calc: "You will have to pay "
 name: "What's your name?"
 deferred?: "Is the interest deferred?"
 
