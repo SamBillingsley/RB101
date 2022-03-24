@@ -1,0 +1,53 @@
+#1)
+  # 1
+  # 2
+  # 2
+  # 3
+
+#2)
+# what is != and where should you use it?
+  # Means does not equal
+# put ! before something, like !user_name
+  # Means false or opposite
+# put ! after something, like words.uniq!
+  # Either part of method name or to mutate object
+# put ? before something
+  # operator for if else
+# put ? after something
+  # Part of method name
+# put !! before something, like !!user_name
+  # Returns as truthy
+
+#3)
+  advice = "Few things in life are as important as house training your pet dinosaur."
+  advice.gsub!('important', 'urgent' )
+
+#4)
+  #numbers.delete_at(1)
+    # Deletes the second object in array
+  #numbers.delete(1)
+   # Deletes first object in array
+
+#5)
+  if (10..100).cover?(42)
+    p 'true'
+  end
+
+#6)
+  # famous_words = "seven years ago..."
+  # famous_words.prepend("Four score and ")
+  # p famous_words
+
+  # famous_words.insert(0, 'Four score and ')
+  # p famous_words
+
+#7)
+  # flintstones = ["Fred", "Wilma"]
+  # flintstones << ["Barney", "Betty"]
+  # flintstones << ["BamBam", "Pebbles"]
+  # flintstones.flatten!
+  # p flintstones
+
+#8)
+  flintstones = { "Fred" => 0, "Wilma" => 1, "Barney" => 2, "Betty" => 3, "BamBam" => 4, "Pebbles" => 5 } 
+  p flintstones.assoc("Barney")

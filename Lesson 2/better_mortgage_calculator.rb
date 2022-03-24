@@ -101,7 +101,7 @@ loop do
 
   if deferred
     prompt("#{messages('monthly_payment')} $#{deferred.round(2)}.")
-    prompt("You will be paying an extra $#{interest} after those #{loan_duration} months.")
+    prompt("You will owe an extra $#{interest} if the purchase is not paid off in #{loan_duration} months.")
   else
     prompt("#{messages('monthly_payment')} $#{monthly_payment.round(2)}.")
     prompt("You will be paying an extra $#{interest} in interest.")

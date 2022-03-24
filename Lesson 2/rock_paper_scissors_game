@@ -1,0 +1,90 @@
+VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard']
+SIMPLE_CHOICES = ['r', 'p', 'sc', 'sp', 'l']
+
+def prompt(message)
+  puts "=> #{message}"
+end
+
+def win?(first, second)
+  (first == 'rock' && (second == 'scissors' || second == 'lizard')) ||
+    (first == 'paper' && (second == 'rock' || second == 'spock' )) ||
+    (first == 'scissors' && (second == 'paper' || second == 'lizard')) ||
+    (first == 'lizard' && (second == 'spock' || second == 'paper')) ||
+    (first == 'spock' && (second == 'rock' || second == 'scissors'))
+end
+
+$user_score = 0
+$comp_score = 0
+
+loop do
+  def display_results(player, computer)
+    if win?(player, computer)
+        prompt("You won the round!")
+    elsif win?(computer, player)
+        prompt("Computer won the round!")
+    else
+      prompt("It's a tie!")
+    end
+  end
+
+  def score(player, computer)
+    if win?(player, computer)
+      $user_score += 1
+    elsif win?(computer, player)
+      $comp_score += 1
+    end
+  end
+
+  loop do
+    choice = ''
+    loop do
+      prompt("Choose one: #{VALID_CHOICES.join(', ')}")
+      choice = gets.chomp
+
+      if VALID_CHOICES.include?(choice) ||
+        SIMPLE_CHOICES.include?(choice)
+        break
+      else
+        puts "Please enter a valid choice."
+      end
+    end
+
+    if choice == 'r'
+      choice = 'rock'
+    elsif choice == 'p'
+      choice = 'paper'
+    elsif choice == 'sc'
+      choice = 'scissors'
+    elsif choice == 'sp'
+      choice = 'spock'
+    elsif choice == 'l'
+      choice = 'lizard'
+    end
+
+    computer_choice = VALID_CHOICES.sample
+
+    prompt("You chose #{choice}; computer chose #{computer_choice}")
+
+    display_results(choice, computer_choice)
+    score(choice, computer_choice)
+
+    prompt("User #{$user_score}, Computer #{$comp_score}")
+  
+    if $user_score == 2
+      puts "You win!"
+      break
+    elsif $comp_score == 2
+      puts "Computer wins!"
+      break
+    end
+  end
+  
+  $user_score = 0
+  $comp_score = 0
+
+  prompt("Would you like to play again?")
+  answer = gets.chomp
+  break unless answer.downcase.start_with?("y")
+end
+
+prompt("Thank you for playing. Goodbye!")
