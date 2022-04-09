@@ -53,20 +53,50 @@
 
 #7)
 
-  munsters = {
-    "Herman" => { "age" => 32, "gender" => "male" },
-    "Lily" => { "age" => 30, "gender" => "female" },
-    "Grandpa" => { "age" => 402, "gender" => "male" },
-    "Eddie" => { "age" => 10, "gender" => "male" },
-    "Marilyn" => { "age" => 23, "gender" => "female"}
-  }
+  # munsters = {
+  #   "Herman" => { "age" => 32, "gender" => "male" },
+  #   "Lily" => { "age" => 30, "gender" => "female" },
+  #   "Grandpa" => { "age" => 402, "gender" => "male" },
+  #   "Eddie" => { "age" => 10, "gender" => "male" },
+  #   "Marilyn" => { "age" => 23, "gender" => "female"}
+  # }
 
-  def mess_with_demographics(demo_hash)
-    demo_hash.values.each do |family_member|
-      family_member["age"] += 42
-      family_member["gender"] = "other"
+  # def mess_with_demographics(demo_hash)
+  #   demo_hash.values.each do |family_member|
+  #     family_member["age"] += 42
+  #     family_member["gender"] = "other"
+  #   end
+  # end
+
+  # mess_with_demographics(munsters)
+  # p munsters
+
+#8)
+
+  def rps(fist1, fist2)
+    if fist1 == "rock"
+      (fist2 == "paper") ? "paper" : "rock"
+    elsif fist1 == "paper"
+      (fist2 == "scissors") ? "scissors" : "paper"
+    else
+      (fist2 == "rock") ? "rock" : "scissors"
     end
   end
 
-  mess_with_demographics(munsters)
-  p munsters
+  puts rps(rps(rps("rock", "paper"), rps("rock", "scissors")), "rock")
+
+  # Paper 
+
+#9)
+
+  def foo(param = "no")
+    "yes"
+  end
+
+  def bar(param = "no")
+    param == "no" ? "yes" : "no"
+  end
+
+  bar(foo)
+
+  # Answer would be "no" because "yes" in the foo method == no.

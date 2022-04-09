@@ -1,0 +1,20 @@
+#1)
+
+# File::path is a class method, File#path is a instance method.
+
+#2)
+
+# require 'date'
+
+# puts Date.civil # puts -4712-01-01
+# puts Date.civil(2016) # puts 2016-01-01
+# puts Date.civil(2016, 5)  # puts 2016-05-01
+# puts Date.civil(2016, 5, 13)  # puts 2016-05-13
+
+#3)
+
+def my_method(a, b = 2, c = 3)
+  p [a, b, c]
+end
+
+my_method(4, 5, 6)

@@ -1,0 +1,59 @@
+# loop do
+#   number = rand(1..10)   # a random number between 1 and 10
+#   puts 'Hello!'
+#   if number == 5
+#     puts 'Exiting...'
+#     break
+#   end
+# end
+
+# counter = 0
+
+# loop do
+#   counter += 1
+#   next if counter.odd?
+#   puts counter
+#   break if counter > 5
+# end
+
+# alphabet = 'abcdefghijklmnopqrstuvwxyz'
+# counter = 0
+
+# loop do
+#   break if counter == alphabet.size
+#   puts alphabet[counter]
+#   counter += 1
+# end
+
+# number_of_pets = {
+#   'dogs' => 2,
+#   'cats' => 4,
+#   'fish' => 1
+# }
+# pets = number_of_pets.keys # => ['dogs', 'cats', 'fish']
+# counter = 0
+
+# loop do
+#   break if counter == number_of_pets.size
+#   current_pet = pets[counter]
+#   current_pet_number = number_of_pets[current_pet]
+#   puts "I have #{current_pet_number} #{current_pet}!"
+#   counter += 1
+# end
+
+msg = "i LOVE my mom and Dad."
+
+def palindrome(string)
+  new_msg = ""
+  string.scan do |str|
+    if str.reverse == str && str.length >= 2
+      str.upcase!
+    end
+    new_msg << str
+  end
+  p new_msg
+end
+
+palindrome(msg)
+
+
