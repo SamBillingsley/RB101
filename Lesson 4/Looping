@@ -41,19 +41,20 @@
 #   counter += 1
 # end
 
-msg = "i LOVE my mom and Dad."
+# msg = "i LOVE my mom and Dad."
 
-def palindrome(string)
-  new_msg = ""
-  string.scan do |str|
-    if str.reverse == str && str.length >= 2
-      str.upcase!
-    end
-    new_msg << str
-  end
-  p new_msg
-end
+# def palindrome(string)
+#   new_msg = ""
+#   string.split do |str|
+#     if str.reverse == str && str.length >= 2
+#       str.upcase!
+#     end
+#     new_msg << str
+#   end
+#   p new_msg
+# end
 
-palindrome(msg)
+# palindrome(msg)
+
 
 
